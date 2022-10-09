@@ -24,14 +24,14 @@ Use WebRTC, show video and audio signals from usb video capture card.
 那，可以嘗試使用這個網站工具。
 
 
-## 設備需求
+## Device Specifications
 由於只是概略的做成，可能有無法預期的bug，因此提供我的測試設備：
 1. Nintendo Switch（OLED款式）
 2. Chrome瀏覽器
 3. 擷取卡: [VC01 USB3.0轉HDMI影像擷取卡](https://24h.pchome.com.tw/prod/DCAX3W-A900EQPPF)
 
 
-## 注意事項 & 問題排除
+## Note
 1. 需要要是 hdmi 接口的擷取卡才會有聲音輸出。
 2. 需要允許網站使用攝影機與麥克風。
 3. 如果只有影像或只有聲音，請嘗試重新插拔擷取卡。 
