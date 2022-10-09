@@ -17,10 +17,134 @@
                 'GRAD' 0,
                 'opsz' 48
         }
+
+        .menu-block {
+            /* padding-top: ; */
+            padding-bottom: 1.5rem;
+        }
+
+        .menu-list {
+            height: 0;
+            overflow-y: hidden;
+            transition: height 0.2s ease;
+        }
+
+        .menu-list.is-active {
+            height: auto;
+            transition: height 0.2s ease;
+        }
     </style>
 </head>
 
-<body class="has-background-dark">
+<body>
+
+    <div class="columns full-size m-0">
+        <div class="column is-3 has-background-white">
+            <div class="container p-5">
+                <aside class="menu">
+                    <!-- About -->
+                    <div class="menu-block">
+                        <a class="w-100 icon-text is-justify-content-space-between menu-label is-active">
+                            About
+                            <span class="icon">
+                                <span class="material-symbols-outlined">expand_more</span>
+                            </span>
+                        </a>
+                        <ul class="menu-list is-active">
+                            <li><a>Beta version 0.01, By Arce0406</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Video Source -->
+                    <div class="menu-block">
+                        <a class="w-100 icon-text is-justify-content-space-between menu-label is-active">
+                            Video Source
+                            <span class="icon">
+                                <span class="material-symbols-outlined">expand_more</span>
+                            </span>
+                        </a>
+                        <ul class="menu-list is-active">
+                            <li class="field">
+                                <label class="label">Audio input source</label>
+                                <div class="control">
+                                    <div class="select is-fullwidth">
+                                        <select id="audioSource"></select>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="field">
+                                <label class="label">Audio output destination</label>
+                                <div class="control">
+                                    <div class="select is-fullwidth">
+                                        <select id="audioOutput"></select>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="field">
+                                <label class="label">Video source</label>
+                                <div class="control">
+                                    <div class="select is-fullwidth">
+                                        <select id="videoSource"></select>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Screenshot & Recording -->
+                    <div class="menu-block">
+                        <a class="w-100 icon-text is-justify-content-space-between menu-label">
+                            Screenshot & Recording
+                            <span class="icon">
+                                <span class="material-symbols-outlined">chevron_right</span>
+                            </span>
+                        </a>
+                        <ul class="menu-list">
+
+                        </ul>
+                    </div>
+
+                    <!-- About -->
+                    <div class="menu-block">
+                        <a class="w-100 icon-text is-justify-content-space-between menu-label is-active">
+                            Log
+                            <span class="icon">
+                                <span class="material-symbols-outlined">expand_more</span>
+                            </span>
+                        </a>
+                        <ul id="log" class="menu-list is-active">
+                        </ul>
+                    </div>
+
+                </aside>
+            </div>
+        </div>
+        <div class="column is-9 h-100 has-background-dark">
+            <section class="section full-size">
+
+                <div class="is-flex is-justify-content-center full-size">
+                    <!-- Video -->
+                    <figure class="image is-16by9 video-wrapper">
+                        <video class="has-ratio" width="1280" height="720" autoplay playsinline></video>
+                    </figure><!-- / .video -->
+
+                </div>
+                <!-- Content -->
+                <div class="toolbar is-flex is-flex-direction-column is-justify-content-center">
+                    <!-- <button class="button modal-button" data-target="modal" aria-haspopup="true">
+                        <span class="icon is-small">
+                            <span class="material-symbols-outlined">
+                                settings
+                            </span>
+                        </span>
+                    </button> -->
+                </div> <!-- / .container -->
+
+            </section>
+
+        </div>
+    </div>
+
 
     <div id="modal" class="modal">
         <div class="modal-background"></div>
@@ -97,34 +221,14 @@
         <button class="modal-close is-large" aria-label="close"></button>
     </div>
 
-    <section class="section full-size">
-
-        <div class="is-flex is-justify-content-center full-size">
-            <!-- Video -->
-            <figure class="image video-wrapper">
-                <video class="has-ratio" width="640" height="360" autoplay playsinline></video>
-            </figure><!-- / .video -->
-
-        </div>
-        <!-- Content -->
-        <div class="toolbar is-flex is-flex-direction-column is-justify-content-center">
-            <button class="button modal-button" data-target="modal" aria-haspopup="true">
-                <span class="icon is-small">
-                    <span class="material-symbols-outlined">
-                        settings
-                    </span>
-                </span>
-            </button>
-        </div> <!-- / .container -->
-
-    </section>
 
 
     <!-- Lib: JQuery -->
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
-    <script src="js/modal.js" async></script>
-    <script src="js/tab.js" async></script>
+    <script src="js/modal.js"></script>
+    <script src="js/tab.js"></script>
+    <script src="js/collapse.js"></script>
     <script src="js/main.js" async></script>
 </body>
 

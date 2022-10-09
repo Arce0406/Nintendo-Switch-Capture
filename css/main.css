@@ -23,8 +23,6 @@ video {
   position: absolute;
   width: 100%;
   height: 100%;
-  max-width: 1080px;
-  max-height: 720px;
   touch-action: none;
   cursor: inherit;
 }
