@@ -165,8 +165,8 @@ function start() {
     },
     video: {
       deviceId: videoSource ? { exact: videoSource } : undefined,
-      width: { min: 640, ideal: 1280 },
-      height: { min: 360, ideal: 720 },
+      width: { min: 640, ideal: 1280, max: 1920 },
+      height: { min: 360, ideal: 720, max: 1080 },
       aspectRatio: { ideal: 1.7777777778 },
     },
   };

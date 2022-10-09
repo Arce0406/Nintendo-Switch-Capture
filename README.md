@@ -15,15 +15,19 @@ Use WebRTC, show video and audio signals from usb video capture card.
 - 直接使用螢幕，除非是特殊螢幕(支援PIP/PBP)，才能把遊戲視窗化，否則是直接佔用掉一個螢幕，需要手動切換訊號來源才能跟電腦一起使用，即使我是雙螢幕也嫌煩。
 - 而如果用OBS，想要跟朋友分享遊戲畫面，就要再直播/串流到影音平台上。並且想串流的話，也需要高價位的擷取盒，才會更穩定...。
 
-因此如果你想要
+因此如果你想要...
 - 不透過其他軟體，直接投放 Switch 畫面。
 - 不想買高貴的擷取盒，但有買(或可以負擔)便宜的 usb 擷取卡(20美金以內)。
 - 希望能看到視窗化的遊戲畫面，而不是占用整個螢幕。
 
 那，可以嘗試使用這個網站工具。
 
+
+## 設備需求
 由於只是概略的做成，可能有無法預期的bug，因此提供我的測試設備：
-Nintendo Switch（OLED款式）、Chrome瀏覽器、擷取卡是 VC01 USB3.0轉HDMI影像擷取卡 https://24h.pchome.com.tw/prod/DCAX3W-A900EQPPF 。
+1. Nintendo Switch（OLED款式）
+2. Chrome瀏覽器
+3. 擷取卡: [VC01 USB3.0轉HDMI影像擷取卡](https://24h.pchome.com.tw/prod/DCAX3W-A900EQPPF)
 
 
 ## 注意事項 & 問題排除
