@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Video Capture Card - Web Viewer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 48
+        }
+
+        .menu-block {
+            /* padding-top: ; */
+            padding-bottom: 1.5rem;
+        }
+
+        .menu-list {
+            height: 0;
+            overflow-y: hidden;
+            transition: height 0.2s ease;
+        }
+
+        .menu-list.is-active {
+            height: auto;
+            transition: height 0.2s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="columns full-size m-0">
+        <div class="column is-3 has-background-white">
+            <div class="container p-5">
+                <aside class="menu">
+                    <div class="menu-block">
+                        <a class="w-100 icon-text is-justify-content-space-between menu-label is-active">
+                            About
+                            <span class="icon">
+                                <span class="material-symbols-outlined">expand_more</span>
+                            </span>
+                        </a>
+                        <ul class="menu-list is-active">
+                            <li><a>Dashboard</a></li>
+                            <li><a>Customers</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="menu-block">
+                        <a class="w-100 icon-text is-justify-content-space-between menu-label">
+                            Video Source
+                            <span class="icon">
+                                <span class="material-symbols-outlined">chevron_right</span>
+                            </span>
+                        </a>
+                        <ul class="menu-list">
+                            <li class="field">
+                                <label class="label">Audio input source</label>
+                                <div class="control">
+                                    <div class="select is-fullwidth">
+                                        <select id="audioSource"></select>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="field">
+                                <label class="label">Audio output destination</label>
+                                <div class="control">
+                                    <div class="select is-fullwidth">
+                                        <select id="audioOutput"></select>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="field">
+                                <label class="label">Video source</label>
+                                <div class="control">
+                                    <div class="select is-fullwidth">
+                                        <select id="videoSource"></select>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="menu-block">
+                        <a class="w-100 icon-text is-justify-content-space-between menu-label">
+                            Screenshot & Recording
+                            <span class="icon">
+                                <span class="material-symbols-outlined">chevron_right</span>
+                            </span>
+                        </a>
+                        <ul class="menu-list">
+                            <li><a>Dashboard</a></li>
+                            <li><a>Customers</a></li>
+                        </ul>
+                    </div>
+
+                </aside>
+            </div>
+        </div>
+        <div class="column is-9 h-100 has-background-dark">
+            <section class="section full-size">
+
+                <div class="is-flex is-justify-content-center full-size">
+                    <!-- Video -->
+                    <figure class="image video-wrapper">
+                        <video class="has-ratio" width="640" height="360" autoplay playsinline></video>
+                    </figure><!-- / .video -->
+
+                </div>
+                <!-- Content -->
+                <div class="toolbar is-flex is-flex-direction-column is-justify-content-center">
+                    <!-- <button class="button modal-button" data-target="modal" aria-haspopup="true">
+                        <span class="icon is-small">
+                            <span class="material-symbols-outlined">
+                                settings
+                            </span>
+                        </span>
+                    </button> -->
+                </div> <!-- / .container -->
+
+            </section>
+
+        </div>
+    </div>
+
+
+    <div id="modal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="container has-background-white h-100 w-100 p-5">
+                <!-- Any other Bulma elements you want -->
+                <div class="content">
+                    <h1>Welcome</h1>
+                    <p></p>
+                </div>
+                <div class="tabs">
+                    <ul>
+                        <li class="is-active" data-target="tab_setting"><a>Setting</a></li>
+                        <li data-target="tab_record"><a>Screenshot & Recording</a></li>
+                        <li data-target="tab_about"><a>About</a></li>
+                    </ul>
+                </div>
+                <div class="tab-contents">
+                    <div id="tab_setting" class="tab-panel is-active container">
+                        <form>
+                            <div class="field is-horizontal">
+                                <div class="field-label is-normal">
+                                    <label class="label">Audio input source</label>
+                                </div>
+                                <div class="field-body">
+                                    <div class="field">
+                                        <div class="control">
+                                            <div class="select is-fullwidth">
+                                                <select id="audioSource"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field is-horizontal">
+                                <div class="field-label is-normal">
+                                    <label class="label">Audio output destination</label>
+                                </div>
+                                <div class="field-body">
+                                    <div class="field">
+                                        <div class="control">
+                                            <div class="select is-fullwidth">
+                                                <select id="audioOutput"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field is-horizontal">
+                                <div class="field-label is-normal">
+                                    <label class="label">Video source</label>
+                                </div>
+                                <div class="field-body">
+                                    <div class="field">
+                                        <div class="control">
+                                            <div class="select is-fullwidth">
+                                                <select id="videoSource"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="tab_record" class="tab-panel container">
+                        Screenshot & Recording
+                    </div>
+                    <div id="tab_about" class="tab-panel container">
+                        About
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+
+
+
+    <!-- Lib: JQuery -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/tab.js"></script>
+    <script src="js/collapse.js"></script>
+    <script src="js/main.js" async></script>
+</body>
+
+</html>
