@@ -4,216 +4,281 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <title>Video Capture Card - Web Viewer</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="css/main.css" />
+    <style>
+        * {
+            overflow: hidden !important;
+        }
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67C5P1R6X"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+        /*
+            section 
+        */
+        .section {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: auto;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
 
-        gtag('config', 'G-Q67C5P1R6X');
-    </script>
+        body:hover>.section {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .section.show {
+            opacity: 1;
+        }
+
+        .bg-overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .bg-overlay:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            opacity: .75;
+        }
+
+        /*
+            bar 
+        */
+        .icon-button {
+            color: #111111;
+            cursor: pointer;
+            border-width: 0;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 3em;
+            width: 3em;
+            border-radius: 9999px;
+            margin-right: 0.5rem;
+            /* margin-bottom: 0.5rem; */
+        }
+
+        .control-bar {
+            display: block;
+            padding: 1.25rem;
+        }
+    </style>
 </head>
 
-<body>
+<body class="has-background-black-ter">
 
-    <div class="columns full-size m-0">
-        <div class="column is-3 has-background-white">
-            <div class="container p-5">
-                <aside class="menu">
-                    <!-- About -->
-                    <div class="menu-block">
-                        <a class="w-100 icon-text is-justify-content-space-between menu-label is-active">
-                            About
-                            <span class="icon">
-                                <span class="material-symbols-outlined">expand_more</span>
-                            </span>
-                        </a>
-                        <ul class="menu-list is-active">
-                            <li><a>Beta version 0.01, By Arce0406</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Video Source -->
-                    <div class="menu-block">
-                        <a class="w-100 icon-text is-justify-content-space-between menu-label is-active">
-                            Video Source
-                            <span class="icon">
-                                <span class="material-symbols-outlined">expand_more</span>
-                            </span>
-                        </a>
-                        <ul class="menu-list is-active">
-                            <li class="field">
-                                <label class="label">Audio input source</label>
-                                <div class="control">
-                                    <div class="select is-fullwidth">
-                                        <select id="audioSource"></select>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="field">
-                                <label class="label">Audio output destination</label>
-                                <div class="control">
-                                    <div class="select is-fullwidth">
-                                        <select id="audioOutput"></select>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="field">
-                                <label class="label">Video source</label>
-                                <div class="control">
-                                    <div class="select is-fullwidth">
-                                        <select id="videoSource"></select>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Screenshot & Recording -->
-                    <div class="menu-block">
-                        <a class="w-100 icon-text is-justify-content-space-between menu-label">
-                            Screenshot & Recording
-                            <span class="icon">
-                                <span class="material-symbols-outlined">chevron_right</span>
-                            </span>
-                        </a>
-                        <ul class="menu-list">
-
-                        </ul>
-                    </div>
-
-                    <!-- About -->
-                    <div class="menu-block">
-                        <a class="w-100 icon-text is-justify-content-space-between menu-label is-active">
-                            Log
-                            <span class="icon">
-                                <span class="material-symbols-outlined">expand_more</span>
-                            </span>
-                        </a>
-                        <ul id="log" class="menu-list is-active">
-                        </ul>
-                    </div>
-
-                </aside>
-            </div>
-        </div>
-        <div class="column is-9 h-100 has-background-dark">
-            <section class="section full-size">
-
-                <div class="is-flex is-justify-content-center full-size">
-                    <!-- Video -->
-                    <figure class="image is-16by9 video-wrapper">
-                        <video class="has-ratio" width="1280" height="720" autoplay playsinline disablepictureinpicture controls controlslist="nodownload noplaybackrate"></video>
-                    </figure><!-- / .video -->
-
+    <!-- Modal: stream source -->
+    <div id="modal" class="modal is-active">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <span class="material-symbols-outlined mr-2">
+                    settings
+                </span>
+                <p class="modal-card-title">
+                    Setting
+                </p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="content">
+                    <p>請先開啟 <b>Nintendo Switch</b> 電源，並接上<b>擷取卡</b>，然後將擷取卡連接到電腦。</p>
+                    <p><b>影像來源</b> & <b>聲音來源</b> 都請選擇擷取卡裝置。<br> <b>聲音輸出</b> 則選擇要輸出聲音的裝置(如: 揚聲器、耳機)。</p>
                 </div>
-                <!-- Content -->
-                <div class="toolbar is-flex is-flex-direction-column is-justify-content-center">
-                    <!-- <button class="button modal-button" data-target="modal" aria-haspopup="true">
-                        <span class="icon is-small">
+                <p class="title is-5">Input Source</p>
+                <!-- Video Input -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">影像來源</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control has-icons-left">
+                                <div class="select is-fullwidth">
+                                    <select id="videoSource"></select>
+                                </div>
+                                <div class="icon is-small is-left">
+                                    <span class="material-symbols-outlined">
+                                        videocam
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Audio Input -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">聲音來源</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control has-icons-left">
+                                <div class="select is-fullwidth">
+                                    <select id="audioSource"></select>
+                                </div>
+                                <div class="icon is-small is-left">
+                                    <span class="material-symbols-outlined">
+                                        mic
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="title is-5">Output Device</p>
+                <!-- Audio Output -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">聲音輸出</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control has-icons-left">
+                                <div class="select is-fullwidth">
+                                    <select id="audioOutput"></select>
+                                </div>
+                                <div class="icon is-small is-left">
+                                    <span class="material-symbols-outlined">
+                                        output
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <footer class="modal-card-foot is-justify-content-end">
+                <button class="button">Close</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Video -->
+    <!-- autoplay playsinline controls disablepictureinpicture controlslist="nodownload noplaybackrate" -->
+    <video width="1280" height="720" autoplay playsinline></video>
+
+    <!-- Control panel -->
+    <section class="section">
+        <div class="bg-overlay"></div>
+        <div class="container is-fluid control-bar">
+            <div class="columns" style="align-items: center;">
+                <div class="column is-3">
+                    <div class="content">
+                        <p class="title is-4">Capture Card Viewer</p>
+                        <p class="subtitle is-6">by Arce0406</p>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="player-controls is-flex is-justify-content-center">
+                        <!-- control: 設定 -->
+                        <button class="icon-button modal-button" data-target="modal" aria-haspopup="true">
                             <span class="material-symbols-outlined">
                                 settings
                             </span>
-                        </span>
-                    </button> -->
-                </div> <!-- / .container -->
-
-            </section>
-
-        </div>
-    </div>
-
-
-    <div id="modal" class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-            <div class="container has-background-white h-100 w-100 p-5">
-                <!-- Any other Bulma elements you want -->
-                <div class="content">
-                    <h1>Welcome</h1>
-                    <p></p>
-                </div>
-                <div class="tabs">
-                    <ul>
-                        <li class="is-active" data-target="tab_setting"><a>Setting</a></li>
-                        <li data-target="tab_record"><a>Screenshot & Recording</a></li>
-                        <li data-target="tab_about"><a>About</a></li>
-                    </ul>
-                </div>
-                <div class="tab-contents">
-                    <div id="tab_setting" class="tab-panel is-active container">
-                        <form>
-                            <div class="field is-horizontal">
-                                <div class="field-label is-normal">
-                                    <label class="label">Audio input source</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <div class="control">
-                                            <div class="select is-fullwidth">
-                                                <select id="audioSource"></select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="field is-horizontal">
-                                <div class="field-label is-normal">
-                                    <label class="label">Audio output destination</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <div class="control">
-                                            <div class="select is-fullwidth">
-                                                <select id="audioOutput"></select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="field is-horizontal">
-                                <div class="field-label is-normal">
-                                    <label class="label">Video source</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <div class="control">
-                                            <div class="select is-fullwidth">
-                                                <select id="videoSource"></select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                        </button>
+                        <!-- control: 播放、暫停 -->
+                        <button class="icon-button d-none" id="play">
+                            <span class="material-symbols-outlined">
+                                play_arrow
+                            </span>
+                        </button>
+                        <button class="icon-button" id="pause">
+                            <span class="material-symbols-outlined">
+                                pause
+                            </span>
+                        </button>
+                        <!-- control: 開啟聲音、靜音 -->
+                        <button class="icon-button" id="volume_on">
+                            <span class="material-symbols-outlined">
+                                volume_up
+                            </span>
+                        </button>
+                        <button class="icon-button d-none" id="volume_off">
+                            <span class="material-symbols-outlined">
+                                volume_off
+                            </span>
+                        </button>
+                        <!-- <button class="icon-button">
+                            <span class="material-symbols-outlined">
+                                volume_down
+                            </span>
+                        </button> -->
                     </div>
-                    <div id="tab_record" class="tab-panel container">
-                        Screenshot & Recording
-                    </div>
-                    <div id="tab_about" class="tab-panel container">
-                        About
+                </div>
+                <div class="column is-3">
+                    <div class="player-controls is-flex is-justify-content-center">
+                        <!-- <button class="icon-button">
+                            <span class="material-symbols-outlined">
+                                photo_camera
+                            </span>
+                        </button> -->
+                        <!-- <button class="icon-button" id="cast">
+                            <span class="material-symbols-outlined">
+                                cast
+                            </span>
+                        </button> -->
+                        <!-- control: 子母畫面 -->
+                        <button class="icon-button" id="pip">
+                            <span class="material-symbols-outlined">
+                                picture_in_picture_alt
+                            </span>
+                        </button>
+                        <!-- control: 全螢幕化 -->
+                        <button class="icon-button" id="fullscreen">
+                            <span class="material-symbols-outlined">
+                                fullscreen
+                            </span>
+                        </button>
+                        <button class="icon-button d-none" id="fullscreen_exit">
+                            <span class="material-symbols-outlined">
+                                fullscreen_exit
+                            </span>
+                        </button>
+                        <!-- <button class="icon-button">
+                            <span class="material-symbols-outlined">
+                                help
+                            </span>
+                        </button> -->
                     </div>
                 </div>
             </div>
+
+
         </div>
-        <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-
-
+    </section>
 
     <!-- Lib: JQuery -->
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/tab.js"></script>
-    <script src="js/collapse.js"></script>
+    <!-- <script src="js/downloadImage.js"></script> -->
     <script src="js/main.js" async></script>
+    <script src="js/player.js" async></script>
 </body>
 
 </html>

@@ -17,7 +17,7 @@ body {
 */
 .material-symbols-outlined {
   font-variation-settings:
-      'FILL' 0,
+      'FILL' 1,
       'wght' 400,
       'GRAD' 0,
       'opsz' 48
@@ -45,10 +45,14 @@ body {
 }
 
 /*
-    visiblity 
+    display、visiblity、overflow
 */
+.d-none{
+  display: none !important;
+}
+
 .overflow-hidden {
-  overflow: hidden !important;
+  overflow: hidden !important;  
 }
 
 .is-hidden {
@@ -82,10 +86,10 @@ video {
     modal 
 */
 
-.modal .modal-content{
+/* .modal .modal-content{
   height: 600px;
   width: 800px;
-}
+} */
 
 /*
     section 
