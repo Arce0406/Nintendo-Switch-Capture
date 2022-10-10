@@ -35,7 +35,7 @@ Github Pages: [https://arce0406.github.io/VideoCaptureCard-WebViewer/](https://a
 
 
 ## Usage
-操作步驟
+以下為操作步驟。
 1. 開啟 Nintendo Switch 電源，並接上 HDMI 線。
 2. 將 HDMI 接上擷取卡，再將擷取卡連接到電腦。
 3. 開啟網站 [https://arce0406.github.io/VideoCaptureCard-WebViewer/](https://arce0406.github.io/VideoCaptureCard-WebViewer/)
