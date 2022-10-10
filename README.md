@@ -1,10 +1,18 @@
 # VideoCaptureCard-WebViewer (Capture Card Viewer)
 將擷取卡採集到影像與音頻訊號，透過 WebRTC API 顯示在網頁的`<video>`元素上。  
-Capture video and audio signals from the capture card and display them on the `<video>` element of the web page via the WebRTC API.
   
+Capture video and audio signals from the capture card and display them on the `<video>` element of the web page via the WebRTC API.  
   
-Github Repo: [https://github.com/Arce0406/VideoCaptureCard-WebViewer](https://github.com/Arce0406/VideoCaptureCard-WebViewer)  
-Github Pages: [https://arce0406.github.io/VideoCaptureCard-WebViewer/](https://arce0406.github.io/VideoCaptureCard-WebViewer/)  
+キャプチャカードからビデオ信号と音声信号をキャプチャし、WebRTC APIを介してWebページの`<video>`要素に表示します。  
+  
+## Guideline
+[中文版](README.md)  
+[日本語版](README-jp.md)  
+[English version](README-en.md)  
+  
+## Links
+[Repository - https://github.com/Arce0406/VideoCaptureCard-WebViewer](https://github.com/Arce0406/VideoCaptureCard-WebViewer)  
+[Homepage - https://arce0406.github.io/VideoCaptureCard-WebViewer/](https://arce0406.github.io/VideoCaptureCard-WebViewer/)  
 
 ## Scenario
 如果你想投放 Nintendo Switch 的畫面到電腦螢幕，有幾種常見的做法。
