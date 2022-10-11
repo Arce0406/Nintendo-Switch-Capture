@@ -1,18 +1,19 @@
-# VideoCaptureCard-WebViewer (Capture Card Viewer)
+# VideoCaptureCard-WebViewer (Capture Card Viewer)  
+キャプチャカードからビデオ信号と音声信号をキャプチャし、WebRTC APIを介してWebページの`<video>`要素に表示します。  
+  
 將擷取卡採集到影像與音頻訊號，透過 WebRTC API 顯示在網頁的`<video>`元素上。  
   
 Capture video and audio signals from the capture card and display them on the `<video>` element of the web page via the WebRTC API.  
+
   
-キャプチャカードからビデオ信号と音声信号をキャプチャし、WebRTC APIを介してWebページの`<video>`要素に表示します。  
-  
-## Guideline
-[中文版](README.md)  
+## ガイドライン
 [日本語版](README-jp.md)  
+[中文版](README.md)  
 [English version](README-en.md)  
   
-## Links
-[Repository - https://github.com/Arce0406/VideoCaptureCard-WebViewer](https://github.com/Arce0406/VideoCaptureCard-WebViewer)  
-[Homepage - https://arce0406.github.io/VideoCaptureCard-WebViewer/](https://arce0406.github.io/VideoCaptureCard-WebViewer/)  
+## リンク
+Repository > [https://github.com/Arce0406/VideoCaptureCard-WebViewer](https://github.com/Arce0406/VideoCaptureCard-WebViewer)  
+ホームページ > [https://arce0406.github.io/VideoCaptureCard-WebViewer/](https://arce0406.github.io/VideoCaptureCard-WebViewer/)  
 
 ## シナリオ
 Nintendo Switchの画面をパソコンの画面に落としたい場合、いくつかの一般的な方法があります。  
@@ -22,8 +23,9 @@ Nintendo Switchの画面をパソコンの画面に落としたい場合、い�
 <br>
   
 しかし、これらの方法は、私にとっては使い勝手が悪い。  
-- パソコンの画面に直接接続すると、特殊な画面（PIP/PBP対応）でない限り、サブウインドウに表示するように対応しています。そうでない場合は、パソコンと同時に使用する場合、画面信号のソースを手動で切り替える必要があり、非常に面倒です。
-- OBSでキャプチャする場合は、プレーヤーソフトに信号を出力するか、ストリーミングプラットフォーム（Youtube、Twitchなど）にライブ放送する必要があり、通常、遅延が発生する。
+> パソコンの画面に直接接続すると、特殊な画面（PIP/PBP対応）でない限り、サブウインドウに表示するように対応しています。そうでない場合は、パソコンと同時に使用する場合、画面信号のソースを手動で切り替える必要があり、非常に面倒です。
+  
+> OBSでキャプチャする場合は、プレーヤーソフトに信号を出力するか、ストリーミングプラットフォーム（Youtube、Twitchなど）にライブ放送する必要があり、通常、遅延が発生する。
   
 <br>
   
@@ -55,9 +57,9 @@ Nintendo Switchの画面をパソコンの画面に落としたい場合、い�
 
 ## デバイスの規格
 あくまでラフな考えなので、予測できないバグがあるかもしれないので、私のテスト機器のスペックを提示します。  
-1. Nintendo Switch（OLED）
-2. ブラウザー: Chrome (version 106.0.5249.103)
-3. キャプチャカード: [VC01 USB3.0轉HDMI影像擷取卡](https://24h.pchome.com.tw/prod/DCAX3W-A900EQPPF)
+- Nintendo Switch（OLED）
+- ブラウザー: Chrome (version 106.0.5249.103)
+- キャプチャカード: [VC01 USB3.0轉HDMI影像擷取卡](https://24h.pchome.com.tw/prod/DCAX3W-A900EQPPF)
 
 
 ## 機能一覧
