@@ -22,8 +22,9 @@ Capture video and audio signals from the capture card and display them on the `<
 <br>
   
 但這些方法對我而言，都不太方便。  
-- 直接把Switch接上電腦螢幕，除非是特殊螢幕(支援PIP/PBP)，才可能能把遊戲視窗化，否則想同時與電腦使用，必須手動切換螢幕訊號來源，非常麻煩。
-- 如果透過OBS擷取，則必須將訊號輸出到某些播放軟體，或者直播到影音平台上(如Youtube、Twitch)，通常都會有延遲。
+> 直接把Switch接上電腦螢幕，除非是特殊螢幕(支援PIP/PBP)，才可能能把遊戲視窗化，否則想同時與電腦使用，必須手動切換螢幕訊號來源，非常麻煩。
+  
+> 如果透過OBS擷取，則必須將訊號輸出到某些播放軟體，或者直播到影音平台上(如Youtube、Twitch)，通常都會有延遲。
   
 <br>
   
@@ -54,9 +55,9 @@ Capture video and audio signals from the capture card and display them on the `<
 
 ## Device Specifications
 由於只是概略的做成，可能有無法預期的bug，因此提供我的測試設備：
-1. Nintendo Switch（OLED款式）
-2. 瀏覽器: Chrome (版本 106.0.5249.103)
-3. 擷取卡: [VC01 USB3.0轉HDMI影像擷取卡](https://24h.pchome.com.tw/prod/DCAX3W-A900EQPPF)
+- Nintendo Switch（OLED款式）
+- 瀏覽器: Chrome (版本 106.0.5249.103)
+- 擷取卡: [VC01 USB3.0轉HDMI影像擷取卡](https://24h.pchome.com.tw/prod/DCAX3W-A900EQPPF)
 
 
 ## Features
