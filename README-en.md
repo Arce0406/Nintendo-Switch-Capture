@@ -1,18 +1,18 @@
-# VideoCaptureCard-WebViewer (Capture Card Viewer)
-將擷取卡採集到影像與音頻訊號，透過 WebRTC API 顯示在網頁的`<video>`元素上。  
-  
+# VideoCaptureCard-WebViewer (Capture Card Viewer)  
 Capture video and audio signals from the capture card and display them on the `<video>` element of the web page via the WebRTC API.  
+  
+將擷取卡採集到影像與音頻訊號，透過 WebRTC API 顯示在網頁的`<video>`元素上。  
   
 キャプチャカードからビデオ信号と音声信号をキャプチャし、WebRTC APIを介してWebページの`<video>`要素に表示します。  
   
 ## Guideline
+[English version](README-en.md)  
 [中文版](README.md)  
 [日本語版](README-jp.md)  
-[English version](README-en.md)  
   
 ## Links
-[Repository - https://github.com/Arce0406/VideoCaptureCard-WebViewer](https://github.com/Arce0406/VideoCaptureCard-WebViewer)  
-[Homepage - https://arce0406.github.io/VideoCaptureCard-WebViewer/](https://arce0406.github.io/VideoCaptureCard-WebViewer/)  
+Repository > [https://github.com/Arce0406/VideoCaptureCard-WebViewer](https://github.com/Arce0406/VideoCaptureCard-WebViewer)  
+Homepage (host on github pages) > [https://arce0406.github.io/VideoCaptureCard-WebViewer/](https://arce0406.github.io/VideoCaptureCard-WebViewer/)  
 
 ## Scenario
 If you want to drop a Nintendo Switch screen onto your computer screen, there are a few common ways to do it.  
@@ -22,8 +22,9 @@ If you want to drop a Nintendo Switch screen onto your computer screen, there ar
 <br>
   
 However, these methods are not user-friendly for me.  
-- If you connect the Switch directly to the computer screen, unless it is a special screen (supporting PIP/PBP), support you show in sub window. Otherwise, if you want to use it with the computer at the same time, you must manually switch the source of the screen signal, which is very troublesome.
-- If you capture through OBS, you have to output the signal to some player software or live broadcast to streaming platforms (such as Youtube, Twitch), which usually has a delay.
+> If you connect the Switch directly to the computer screen, unless it is a special screen (supporting PIP/PBP), support you show in sub window. Otherwise, if you want to use it with the computer at the same time, you must manually switch the source of the screen signal, which is very troublesome.
+  
+> If you capture through OBS, you have to output the signal to some player software or live broadcast to streaming platforms (such as Youtube, Twitch), which usually has a delay.
   
 <br>
   
@@ -55,9 +56,9 @@ Here are the steps.
 
 ## Device Specifications
 Since this is only a rough idea, there may be unpredictable bugs, so I provide my test equipment:  
-1. Nintendo Switch（OLED）
-2. Browser: Chrome (version 106.0.5249.103)
-3. Capture card: [VC01 USB3.0轉HDMI影像擷取卡](https://24h.pchome.com.tw/prod/DCAX3W-A900EQPPF)
+> Nintendo Switch（OLED）
+> Browser: Chrome (version 106.0.5249.103)
+> Capture card: [VC01 USB3.0轉HDMI影像擷取卡](https://24h.pchome.com.tw/prod/DCAX3W-A900EQPPF)
 
 
 ## Features
