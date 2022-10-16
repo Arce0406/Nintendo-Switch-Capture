@@ -17,9 +17,9 @@ Capture video and audio signals from the capture card and display them on the `<
 [English version](README-en.md)  
   
 ## リンク
-Repository > [https://github.com/Arce0406/VideoCaptureCard-WebViewer](https://github.com/Arce0406/VideoCaptureCard-WebViewer)  
+Repository > [https://github.com/Arce0406/Nintendo-Switch-Capture](https://github.com/Arce0406/Nintendo-Switch-Capture)  
   
-ホームページ（Githubページでのホスト）> [https://arce0406.github.io/VideoCaptureCard-WebViewer/](https://arce0406.github.io/VideoCaptureCard-WebViewer/)  
+ホームページ（Githubページでのホスト）> [https://arce0406.github.io/Nintendo-Switch-Capture](https://arce0406.github.io/Nintendo-Switch-Capture)  
 
 ## シナリオ
 Nintendo Switchの画面をパソコンの画面に落としたい場合、いくつかの一般的な方法があります。  

@@ -17,9 +17,9 @@ Capture video and audio signals from the capture card and display them on the `<
 [日本語版](README-jp.md)  
   
 ## Links
-Repository > [https://github.com/Arce0406/VideoCaptureCard-WebViewer](https://github.com/Arce0406/VideoCaptureCard-WebViewer)  
+Repository > [https://github.com/Arce0406/Nintendo-Switch-Capture](https://github.com/Arce0406/Nintendo-Switch-Capture)  
   
-主頁面 (建置於 Github Pages) > [https://arce0406.github.io/VideoCaptureCard-WebViewer/](https://arce0406.github.io/VideoCaptureCard-WebViewer/)  
+主頁面 (建置於 Github Pages) > [https://arce0406.github.io/Nintendo-Switch-Capture](https://arce0406.github.io/Nintendo-Switch-Capture)  
 
 ## Scenario
 如果你想投放 Nintendo Switch 的畫面到電腦螢幕，有幾種常見的做法。

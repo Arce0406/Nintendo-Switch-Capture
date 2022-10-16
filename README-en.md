@@ -18,9 +18,9 @@ Capture video and audio signals from the capture card and display them on the `<
 [日本語版](README-jp.md)  
   
 ## Links
-Repository > [https://github.com/Arce0406/VideoCaptureCard-WebViewer](https://github.com/Arce0406/VideoCaptureCard-WebViewer)  
+Repository > [https://github.com/Arce0406/Nintendo-Switch-Capture](https://github.com/Arce0406/Nintendo-Switch-Capture)  
   
-Homepage (host on Github Pages) > [https://arce0406.github.io/VideoCaptureCard-WebViewer/](https://arce0406.github.io/VideoCaptureCard-WebViewer/)  
+Homepage (host on Github Pages) > [https://arce0406.github.io/Nintendo-Switch-Capture](https://arce0406.github.io/Nintendo-Switch-Capture)  
 
 ## Scenario
 If you want to drop a Nintendo Switch screen onto your computer screen, there are a few common ways to do it.  
