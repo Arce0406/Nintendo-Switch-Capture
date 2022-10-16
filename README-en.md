@@ -1,15 +1,10 @@
-# VideoCaptureCard-WebViewer (Capture Card Viewer)  
+# Nintendo Switch Capture  
 
-Capture video and audio signals from the capture card and display them on the `<video>` element of the web page via the WebRTC API.   
-> Originally designed to capture and display the Nintendo Switch game screen on the computer screen.  
+Connect your Nintendo Switch to the HDMI cable and capture card and connect it to your computer. Once you open this page, you will be able to display the Switch game screen with almost no lag.  
   
+將 Nintendo Switch 接上HDMI線與擷取卡，並連接到電腦。開啟本網頁後，即可幾乎無延遲的顯示Switch遊戲畫面。  
   
-將擷取卡採集到影像與音頻訊號，透過 WebRTC API 顯示在網頁的`<video>`元素上。  
-> 原始設計為:在電腦畫面上擷取並顯示 Nintendo Switch 遊戲畫面  
-  
-  
-キャプチャカードからビデオ信号と音声信号をキャプチャし、WebRTC APIを介してWebページの`<video>`要素に表示します。  
-> Nintendo Switchのゲーム画面をパソコン画面上にキャプチャーして表示するためのものです  
+Nintendo SwitchにHDMIケーブルとキャプチャーカードを接続し、パソコンに接続します。このページを開けば、Switchのゲーム画面をほとんどラグなく表示することができます。  
   
   
 ## Guideline
