@@ -11,10 +11,21 @@ Nintendo SwitchにHDMIケーブルとキャプチャーカードを接続し、�
 [English version](README-en.md)  
 [日本語版](README-jp.md)  
   
+  
 ## Links
 Repository > [https://github.com/Arce0406/Nintendo-Switch-Capture](https://github.com/Arce0406/Nintendo-Switch-Capture)  
   
 主頁面 (建置於 Github Pages) > [https://arce0406.github.io/Nintendo-Switch-Capture](https://arce0406.github.io/Nintendo-Switch-Capture)  
+
+
+## Usage
+以下為操作步驟。
+1. 開啟 Nintendo Switch 電源，並接上 HDMI 線。
+2. 將 HDMI 接上擷取卡，再將擷取卡連接到電腦。
+3. 開啟網站 [https://arce0406.github.io/VideoCaptureCard-WebViewer/](https://arce0406.github.io/VideoCaptureCard-WebViewer/)
+4. 網站預設開啟設定畫面，在此指定影像&聲音來源為擷取卡，並指定好聲音的輸出裝置
+5. 關閉設定畫面，即可開始遊戲
+
 
 ## Scenario
 如果你想投放 Nintendo Switch 的畫面到電腦螢幕，有幾種常見的做法。
@@ -43,15 +54,6 @@ Repository > [https://github.com/Arce0406/Nintendo-Switch-Capture](https://githu
 <br>
   
 那麼，你可以考慮使用這個網站工具。
-
-
-## Usage
-以下為操作步驟。
-1. 開啟 Nintendo Switch 電源，並接上 HDMI 線。
-2. 將 HDMI 接上擷取卡，再將擷取卡連接到電腦。
-3. 開啟網站 [https://arce0406.github.io/VideoCaptureCard-WebViewer/](https://arce0406.github.io/VideoCaptureCard-WebViewer/)
-4. 網站預設開啟設定畫面，在此指定影像&聲音來源為擷取卡，並指定好聲音的輸出裝置
-5. 關閉設定畫面，即可開始遊戲
 
 
 

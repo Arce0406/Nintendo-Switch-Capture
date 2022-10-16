@@ -17,6 +17,16 @@ Repository > [https://github.com/Arce0406/Nintendo-Switch-Capture](https://githu
   
 Homepage (host on Github Pages) > [https://arce0406.github.io/Nintendo-Switch-Capture](https://arce0406.github.io/Nintendo-Switch-Capture)  
 
+
+## Usage
+Here are the steps.  
+1. Turn on the Nintendo Switch and connect the HDMI cable.
+2. Connect the HDMI to the capture card, and then connect the capture card to your computer.
+3. Open the website [https://arce0406.github.io/VideoCaptureCard-WebViewer/](https://arce0406.github.io/VideoCaptureCard-WebViewer/)
+4. It shows settings modal in default, specify the video & audio source as the capture card, and the audio output device. 
+5. Close the setup modal, and enjoy.
+
+
 ## Scenario
 If you want to drop a Nintendo Switch screen onto your computer screen, there are a few common ways to do it.  
 1. Use HDMI to connect from the Nintendo Switch dock to the screen.
@@ -45,16 +55,6 @@ So, if you are like me and just want to...
 <br>
   
 Then, you may consider using this web tool.  
-
-
-## Usage
-Here are the steps.  
-1. Turn on the Nintendo Switch and connect the HDMI cable.
-2. Connect the HDMI to the capture card, and then connect the capture card to your computer.
-3. Open the website [https://arce0406.github.io/VideoCaptureCard-WebViewer/](https://arce0406.github.io/VideoCaptureCard-WebViewer/)
-4. It shows settings modal in default, specify the video & audio source as the capture card, and the audio output device. 
-5. Close the setup modal, and enjoy.
-
 
 
 ## Device Specifications

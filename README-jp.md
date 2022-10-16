@@ -16,6 +16,16 @@ Repository > [https://github.com/Arce0406/Nintendo-Switch-Capture](https://githu
   
 ホームページ（Githubページでのホスト）> [https://arce0406.github.io/Nintendo-Switch-Capture](https://arce0406.github.io/Nintendo-Switch-Capture)  
 
+
+## 使用方法
+以下はその手順です。  
+1. Nintendo Switchの電源を入れ、HDMIケーブルを接続します。
+2. HDMIをキャプチャカードに接続し、キャプチャカードをパソコンに接続する。
+3. ウェブサイト[https://arce0406.github.io/VideoCaptureCard-WebViewer/](https://arce0406.github.io/VideoCaptureCard-WebViewer/)を開く。
+4. デフォルトで設定画面が表示されますので、ビデオ＆オーディオソースをキャプチャカードに、オーディオ出力デバイスを指定します。
+5. 設定モードを閉じて、お楽しみください。
+
+
 ## シナリオ
 Nintendo Switchの画面をパソコンの画面に落としたい場合、いくつかの一般的な方法があります。  
 1. Nintendo SwitchのドックからHDMIでスクリーンに接続する。
@@ -44,16 +54,6 @@ Nintendo Switchの画面をパソコンの画面に落としたい場合、い�
 <br>
   
 そこで、このWebツールの利用を検討してみてはいかがでしょうか。  
-
-
-## 使用方法
-以下はその手順です。  
-1. Nintendo Switchの電源を入れ、HDMIケーブルを接続します。
-2. HDMIをキャプチャカードに接続し、キャプチャカードをパソコンに接続する。
-3. ウェブサイト[https://arce0406.github.io/VideoCaptureCard-WebViewer/](https://arce0406.github.io/VideoCaptureCard-WebViewer/)を開く。
-4. デフォルトで設定画面が表示されますので、ビデオ＆オーディオソースをキャプチャカードに、オーディオ出力デバイスを指定します。
-5. 設定モードを閉じて、お楽しみください。
-
 
 
 ## デバイスの規格
