@@ -1,11 +1,10 @@
 # Nintendo Switch Capture  
-Nintendo SwitchにHDMIケーブルとキャプチャーカードを接続し、パソコンに接続します。このページを開けば、Switchのゲーム画面をほとんどラグなく表示することができます。  
+Display the game screen of Nintendo Switch on the web page.  
   
-將 Nintendo Switch 接上HDMI線與擷取卡，並連接到電腦。開啟本網頁後，即可幾乎無延遲的顯示Switch遊戲畫面。  
+Nintendo Switchのゲーム画面をWebページ上に表示する。  
   
-Connect your Nintendo Switch to the HDMI cable and capture card and connect it to your computer. Once you open this page, you will be able to display the Switch game screen with almost no lag.  
-
-  
+在網頁顯示 Nintendo Switch 的遊戲畫面。  
+    
 ## ガイドライン
 [日本語版](README-jp.md)  
 [中文版](README.md)  
