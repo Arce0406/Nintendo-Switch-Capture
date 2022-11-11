@@ -6,6 +6,7 @@ Nintendo Switchのゲーム画面をWebページ上に表示する。
 在網頁顯示 Nintendo Switch 的遊戲畫面。  
 
 ## Guideline
+
 [中文版](README.md)  
 [English version](README-en.md)  
 [日本語版](README-jp.md)  
@@ -19,22 +20,30 @@ Nintendo SwitchにHDMIケーブルとキャプチャーカードを接続し、�
    -->
   
 ## Links
+
 Repository > [https://github.com/Arce0406/Nintendo-Switch-Capture](https://github.com/Arce0406/Nintendo-Switch-Capture)  
   
 主頁面 (建置於 Github Pages) > [https://arce0406.github.io/Nintendo-Switch-Capture](https://arce0406.github.io/Nintendo-Switch-Capture)  
 
 
 ## Usage
+
 以下為操作步驟。
+
 1. 開啟 Nintendo Switch 電源，並接上 HDMI 線。
 2. 將 HDMI 接上擷取卡，再將擷取卡連接到電腦。
 3. 開啟網站 [https://arce0406.github.io/VideoCaptureCard-WebViewer/](https://arce0406.github.io/VideoCaptureCard-WebViewer/)
 4. 網站預設開啟設定畫面，在此指定影像&聲音來源為擷取卡，並指定好聲音的輸出裝置
 5. 關閉設定畫面，即可開始遊戲
 
+![This is an image](https://github.com/Arce0406/Nintendo-Switch-Capture/img/tutorial/nsc_1.png)
+![This is an image](https://github.com/Arce0406/Nintendo-Switch-Capture/img/tutorial/nsc_2.png)
+![This is an image](https://github.com/Arce0406/Nintendo-Switch-Capture/img/tutorial/nsc_3.png)
 
 ## Scenario
+
 如果你想投放 Nintendo Switch 的畫面到電腦螢幕，有幾種常見的做法。
+
 1. 使用HDMI，從 Nintendo Switch 底座連接到螢幕。
 2. 使用擷取卡/擷取盒，然後使用OBS捕捉視訊&音訊。
   
@@ -53,6 +62,7 @@ Repository > [https://github.com/Arce0406/Nintendo-Switch-Capture](https://githu
 <br>
   
 所以，如果你跟我一樣，只是希望...
+
 - 想要看到視窗化的遊戲畫面，可以與電腦同時操作，而不是占用整個螢幕。
 - 不想透過其他軟體或複雜的操作，想要直接投放 Nintendo Switch 畫面。
 - 不想購買高價位的擷取盒，但有買(或可以負擔)便宜的 usb 擷取卡(20美金以內)。
@@ -64,13 +74,16 @@ Repository > [https://github.com/Arce0406/Nintendo-Switch-Capture](https://githu
 
 
 ## Device Specifications
+
 由於只是概略的做成，可能有無法預期的bug，因此提供我的測試設備：
+
 - Nintendo Switch（OLED款式）
 - 瀏覽器: Chrome (版本 106.0.5249.103)
 - 擷取卡: [VC01 USB3.0轉HDMI影像擷取卡](https://24h.pchome.com.tw/prod/DCAX3W-A900EQPPF)
 
 
 ## Features
+
 以下為功能一覽表。
 <!-- :heavy_check_mark: 表示已完成  
 :x: 表示尚未完成   -->
@@ -81,7 +94,9 @@ Repository > [https://github.com/Arce0406/Nintendo-Switch-Capture](https://githu
 
 
 ## Note
+
 以下為常見問題與注意事項。
+
 1. 需要是 hdmi 接口的擷取卡才會有聲音輸出，VGA擷取卡只會有影像輸出喔。
 2. 需要允許網站使用攝影機與麥克風。
 3. 如果只有聲音(或只有影像)，請嘗試重新插拔擷取卡。 
