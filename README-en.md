@@ -25,13 +25,13 @@ Here are the steps.
 
 1. Turn on the Nintendo Switch and connect the HDMI cable.
 2. Connect the HDMI to the capture card, and then connect the capture card to your computer.
-3. Open the website [https://arce0406.github.io/VideoCaptureCard-WebViewer/](https://arce0406.github.io/VideoCaptureCard-WebViewer/)
+3. Open the website [https://arce0406.github.io/Nintendo-Switch-Capture](https://arce0406.github.io/Nintendo-Switch-Capture)
 4. It shows settings modal in default, specify the video & audio source as the capture card, and the audio output device. 
 5. Close the setup modal, and enjoy.
 
-![This is an image](https://github.com/Arce0406/Nintendo-Switch-Capture/img/tutorial/nsc_1.png)
-![This is an image](https://github.com/Arce0406/Nintendo-Switch-Capture/img/tutorial/nsc_2.png)
-![This is an image](https://github.com/Arce0406/Nintendo-Switch-Capture/img/tutorial/nsc_3.png)
+![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/tutorial/nsc_1.png)
+![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/tutorial/nsc_2.png)
+![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/tutorial/nsc_3.png)
 
 ## Scenario
 

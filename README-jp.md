@@ -25,13 +25,13 @@ Repository > [https://github.com/Arce0406/Nintendo-Switch-Capture](https://githu
 
 1. Nintendo Switchの電源を入れ、HDMIケーブルを接続します。
 2. HDMIをキャプチャカードに接続し、キャプチャカードをパソコンに接続する。
-3. ウェブサイト[https://arce0406.github.io/VideoCaptureCard-WebViewer/](https://arce0406.github.io/VideoCaptureCard-WebViewer/)を開く。
+3. ウェブサイト [https://arce0406.github.io/Nintendo-Switch-Capture](https://arce0406.github.io/Nintendo-Switch-Capture)を開く。
 4. デフォルトで設定画面が表示されますので、ビデオ＆オーディオソースをキャプチャカードに、オーディオ出力デバイスを指定します。
 5. 設定モードを閉じて、お楽しみください。
 
-![This is an image](https://github.com/Arce0406/Nintendo-Switch-Capture/img/tutorial/nsc_1.png)
-![This is an image](https://github.com/Arce0406/Nintendo-Switch-Capture/img/tutorial/nsc_2.png)
-![This is an image](https://github.com/Arce0406/Nintendo-Switch-Capture/img/tutorial/nsc_3.png)
+![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/tutorial/nsc_1.png)
+![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/tutorial/nsc_2.png)
+![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/tutorial/nsc_3.png)
 
 ## シナリオ
 
