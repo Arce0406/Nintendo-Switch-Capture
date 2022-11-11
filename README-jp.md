@@ -29,9 +29,9 @@ Repository > [https://github.com/Arce0406/Nintendo-Switch-Capture](https://githu
 4. デフォルトで設定画面が表示されますので、ビデオ＆オーディオソースをキャプチャカードに、オーディオ出力デバイスを指定します。
 5. 設定モードを閉じて、お楽しみください。
 
-![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/tutorial/nsc_1.png)
-![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/tutorial/nsc_2.png)
-![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/tutorial/nsc_3.png)
+![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/img/tutorial/nsc_1.png)
+![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/img/tutorial/nsc_2.png)
+![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/img/tutorial/nsc_3.png)
 
 ## シナリオ
 

@@ -36,9 +36,9 @@ Repository > [https://github.com/Arce0406/Nintendo-Switch-Capture](https://githu
 4. 網站預設開啟設定畫面，在此指定影像&聲音來源為擷取卡，並指定好聲音的輸出裝置
 5. 關閉設定畫面，即可開始遊戲
 
-![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/tutorial/nsc_1.png)
-![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/tutorial/nsc_2.png)
-![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/tutorial/nsc_3.png)
+![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/img/tutorial/nsc_1.png)
+![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/img/tutorial/nsc_2.png)
+![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/img/tutorial/nsc_3.png)
 
 ## Scenario
 

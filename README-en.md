@@ -29,9 +29,9 @@ Here are the steps.
 4. It shows settings modal in default, specify the video & audio source as the capture card, and the audio output device. 
 5. Close the setup modal, and enjoy.
 
-![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/tutorial/nsc_1.png)
-![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/tutorial/nsc_2.png)
-![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/tutorial/nsc_3.png)
+![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/img/tutorial/nsc_1.png)
+![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/img/tutorial/nsc_2.png)
+![This is an image](https://arce0406.github.io/Nintendo-Switch-Capture/img/tutorial/nsc_3.png)
 
 ## Scenario
 
