@@ -6,6 +6,8 @@ let mediaRecorder;
 let recordedBlobs;
 const mimeType = "video/mp4";
 
+let recordButton, playButton, downloadButton, errorMsgElement, videoElement;
+
 function stopRecording() {
   mediaRecorder.stop();
   //   recordButton.textContent = 'Start Recording';
