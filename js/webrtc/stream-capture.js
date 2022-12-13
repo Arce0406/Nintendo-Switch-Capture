@@ -7,6 +7,22 @@ let imageCapture;
 
 audioOutputSelect.disabled = !("sinkId" in HTMLMediaElement.prototype);
 
+/**
+ * Error handle
+ * @param {*} error
+ */
+function handleError(error) {
+  console.log(
+    "navigator.MediaDevices.getUserMedia error: ",
+    error.message,
+    error.name
+  );
+}
+
+/**
+ * Get devices
+ * @param {*} deviceInfos
+ */
 function gotDevices(deviceInfos) {
   // console.log(deviceInfos);
   // Handles being called several times to update labels. Preserve values.
@@ -48,7 +64,11 @@ function gotDevices(deviceInfos) {
 
 navigator.mediaDevices.enumerateDevices().then(gotDevices).catch(handleError);
 
-// Attach audio output device to video element using device/sink ID.
+/**
+ * Attach audio output device to video element using device/sink ID.
+ * @param {*} element
+ * @param {*} sinkId
+ */
 function attachSinkId(element, sinkId) {
   if (typeof element.sinkId !== "undefined") {
     element
@@ -75,6 +95,11 @@ function changeAudioDestination() {
   attachSinkId(videoElement, audioDestination);
 }
 
+/**
+ * Get stream
+ * @param {*} stream
+ * @returns
+ */
 function gotStream(stream) {
   window.stream = stream; // make stream available to console
   videoElement.srcObject = stream;
@@ -83,14 +108,9 @@ function gotStream(stream) {
   return navigator.mediaDevices.enumerateDevices();
 }
 
-function handleError(error) {
-  console.log(
-    "navigator.MediaDevices.getUserMedia error: ",
-    error.message,
-    error.name
-  );
-}
-
+/**
+ * Start capture
+ */
 function start() {
   if (window.stream) {
     window.stream.getTracks().forEach((track) => {
@@ -128,4 +148,6 @@ audioOutputSelect.onchange = changeAudioDestination;
 
 videoSelect.onchange = start;
 
-start();
+// start();
+
+export { start };

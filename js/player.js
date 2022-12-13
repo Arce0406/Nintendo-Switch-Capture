@@ -1,4 +1,5 @@
-// const videoElement = document.querySelector("video");
+const videoElement = document.querySelector("video");
+
 const play = document.getElementById("play");
 const pause = document.getElementById("pause");
 const volume_on = document.getElementById("volume_on");
