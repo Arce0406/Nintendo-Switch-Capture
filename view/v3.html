@@ -56,9 +56,9 @@
             align-items: center;
             height: 3em;
             width: 3em;
-        } 
+        }
 
-        .rect-button{
+        .rect-button {
             color: var(--default-color) !important;
             background-color: transparent;
             /* cursor: pointer; */
@@ -74,7 +74,7 @@
         .share-button {
             color: var(--default-color) !important;
         }
-        
+
         /* .mode-button {} */
 
         .icon-button {
@@ -83,11 +83,13 @@
             margin-top: 1rem;
         }
 
-        .share-button:hover, .rect-button:hover {
+        .share-button:hover,
+        .rect-button:hover {
             background-color: #846f36 !important;
         }
 
-        .share-button:focus, .rect-button:focus {
+        .share-button:focus,
+        .rect-button:focus {
             background-color: #efc245 !important;
             color: #000000 !important;
         }
@@ -109,17 +111,123 @@
             position: absolute;
             bottom: 0;
             width: 100%;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .video-wrapper video:hover+.player-controls,
+        .player-controls:hover {
+            opacity: 1;
+            transition: opacity 0.3s;
         }
     </style>
 </head>
 
 <body class="container is-custom has-background-black-ter">
+
+    <!-- Modal: stream source -->
+    <div id="modal" class="modal is-active has-text-black">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <span class="material-symbols-outlined mr-2">
+                    settings
+                </span>
+                <p class="modal-card-title">
+                    Setting
+                </p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="content">
+                    <!-- <p>請先開啟 <b>Nintendo Switch</b> 電源，並接上<b>擷取卡</b>，然後將擷取卡連接到電腦。</p>
+                    <p><b>影像來源</b> & <b>聲音來源</b> 都請選擇擷取卡裝置。<br> <b>聲音輸出</b> 則選擇要輸出聲音的裝置(如: 揚聲器、耳機)。</p> -->
+                    <p>
+                        Please power on your <b>Nintendo Switch</b>.
+                        <br> Then connect to the <b>capture card</b> and your computer.
+                    </p>
+                    <p>
+                        Select the <b>capture card device</b> for both <b>video source</b> & <b>audio source.</b>
+                        <br>For <b>audio output</b>, select the device you want to output audio from (e.g., speakers,
+                        headphones).
+                    </p>
+                </div>
+                <p class="title is-5">Input Source</p>
+                <!-- Video Input -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <p class="label">Video source</p>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control has-icons-left">
+                                <div class="select is-fullwidth">
+                                    <select id="videoSource"></select>
+                                </div>
+                                <div class="icon is-small is-left">
+                                    <span class="material-symbols-outlined">
+                                        videocam
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Audio Input -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <p class="label">Audio source</p>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control has-icons-left">
+                                <div class="select is-fullwidth">
+                                    <select id="audioSource"></select>
+                                </div>
+                                <div class="icon is-small is-left">
+                                    <span class="material-symbols-outlined">
+                                        mic
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="title is-5 mt-5">Output Device</p>
+                <!-- Audio Output -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <p class="label">Audio output</p>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control has-icons-left">
+                                <div class="select is-fullwidth">
+                                    <select id="audioOutput"></select>
+                                </div>
+                                <div class="icon is-small is-left">
+                                    <span class="material-symbols-outlined">
+                                        output
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <footer class="modal-card-foot is-justify-content-end">
+                <button class="button">Close</button>
+            </footer>
+        </div>
+    </div>
+
     <div class="w-100 h-100 has-background-black-ter is-flex is-flex-direction-column">
         <!-- top -->
         <div class="mb-3 is-flex">
             <button class="button rect-button is-dark is-outlined ml-3 mr-6">
                 <span class="material-symbols-outlined">
-                    fullscreen
+                    menu
                 </span>
             </button>
             <div class="content is-flex-grow-1">
@@ -139,6 +247,7 @@
         </div>
         <!-- middle -->
         <div class="is-flex-grow-1 is-flex">
+
             <aside class="left-bar menu">
                 <button class="button rect-button icon-button is-dark is-outlined">
                     <span class="material-symbols-outlined">
@@ -161,7 +270,8 @@
                     </span>
                 </button>
             </aside>
-            <div class="middle-bar has-background-dark card">
+
+            <div class="middle-bar has-background-dark card d-none">
                 <div class="card-content">
                     <!-- <p>請先開啟 <b>Nintendo Switch</b> 電源，並接上<b>擷取卡</b>，然後將擷取卡連接到電腦。</p>
                         <p><b>影像來源</b> & <b>聲音來源</b> 都請選擇擷取卡裝置。<br> <b>聲音輸出</b> 則選擇要輸出聲音的裝置(如: 揚聲器、耳機)。</p> -->
@@ -175,10 +285,8 @@
                             <br>For <b>audio output</b>, select the device you want to output audio from (e.g., speakers,
                             headphones).
                         </p>
-                    </div> -->
-
+                    </div>
                     <h5 class="title is-5">Input</h5>
-                    <!-- Video Input -->
                     <div class="field">
                         <label class="label">Video source / 影像輸入</label>
                         <div class="control has-icons-left">
@@ -192,7 +300,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Audio Input -->
                     <div class="field">
                         <label class="label">Audio source / 音源輸入</label>
                         <div class="control has-icons-left">
@@ -206,7 +313,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Audio Output -->
                     <h5 class="title is-5 mt-6">Output</h5>
                     <div class="field">
                         <label class="label">Audio output / 聲音輸出</label>
@@ -220,36 +326,36 @@
                                 </span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="is-flex-grow-1 video-wrapper">
                 <video width="1280" height="640"></video>
-                <div class="player-controls is-flex is-justify-content-center">
+                <div class="player-controls has-background-dark is-flex is-justify-content-center">
                     <!-- control: 設定 -->
-                    <button class="icon-button modal-button" data-target="modal" aria-haspopup="true">
+                    <button class="button is-dark is-small modal-button" data-target="modal" aria-haspopup="true">
                         <span class="material-symbols-outlined">
                             settings
                         </span>
                     </button>
                     <!-- control: 播放、暫停 -->
-                    <button class="icon-button d-none" id="play">
+                    <button class="button is-dark is-small d-none" id="play">
                         <span class="material-symbols-outlined">
                             play_arrow
                         </span>
                     </button>
-                    <button class="icon-button" id="pause">
+                    <button class="button is-dark is-small" id="pause">
                         <span class="material-symbols-outlined">
                             pause
                         </span>
                     </button>
                     <!-- control: 開啟聲音、靜音 -->
-                    <button class="icon-button" id="volume_on">
+                    <button class="button is-dark is-small" id="volume_on">
                         <span class="material-symbols-outlined">
                             volume_up
                         </span>
                     </button>
-                    <button class="icon-button d-none" id="volume_off">
+                    <button class="button is-dark is-small d-none" id="volume_off">
                         <span class="material-symbols-outlined">
                             volume_off
                         </span>
@@ -259,12 +365,34 @@
                             volume_down
                         </span>
                     </button> -->
+                    <!-- control: 子母畫面 -->
+                    <button class="button is-dark is-small" id="pip">
+                        <span class="material-symbols-outlined">
+                            picture_in_picture_alt
+                        </span>
+                    </button>
+                    <!-- control: 全螢幕化 -->
+                    <button class="button is-dark is-small" id="fullscreen">
+                        <span class="material-symbols-outlined">
+                            fullscreen
+                        </span>
+                    </button>
+                    <button class="button is-dark is-small d-none" id="fullscreen_exit">
+                        <span class="material-symbols-outlined">
+                            fullscreen_exit
+                        </span>
+                    </button>
                 </div>
             </div>
         </div>
         <!-- bottom -->
         <!-- <div class="bottom">bottom</div> -->
     </div>
+
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script type="module" src="../js/bulma.js" async></script>
+    <script type="module" src="../js/webrtc.js" async></script>
+    <script src="../js/player.js" async></script>
 </body>
 
 </html>
