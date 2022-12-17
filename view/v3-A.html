@@ -120,6 +120,19 @@
             opacity: 1;
             transition: opacity 0.3s;
         }
+        
+        .player-controls .button{
+            color: var(--default-color) !important;
+            background-color: transparent;
+            /* cursor: pointer; */
+            border-width: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 3em;
+            width: 3em;
+            border-radius: 5px;
+        }
     </style>
 </head>
 
@@ -239,11 +252,16 @@
                     share
                 </span>
             </button>
-            <button class="round-button has-background-dark has-text-danger mr-5">
+            <button class="round-button has-background-dark has-text-white mr-5">
                 <span class="material-symbols-outlined">
                     radio_button_checked
                 </span>
             </button>
+            <!-- <button class="round-button has-background-dark has-text-danger mr-5">
+                <span class="material-symbols-outlined">
+                    radio_button_checked
+                </span>
+            </button> -->
         </div>
         <!-- middle -->
         <div class="is-flex-grow-1 is-flex">

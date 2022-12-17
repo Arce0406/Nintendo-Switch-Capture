@@ -1,3 +1,5 @@
+import * as StreamRecorder from "./recorder.js";
+
 const videoElement = document.querySelector("video");
 const audioInputSelect = document.querySelector("select#audioSource");
 const audioOutputSelect = document.querySelector("select#audioOutput");
@@ -101,6 +103,7 @@ function changeAudioDestination() {
  * @returns
  */
 function gotStream(stream) {
+  StreamRecorder.handleSuccess(stream);
   window.stream = stream; // make stream available to console
   videoElement.srcObject = stream;
   videoElement.play();
@@ -143,11 +146,14 @@ function start() {
     .catch(handleError);
 }
 
-audioInputSelect.onchange = start;
-audioOutputSelect.onchange = changeAudioDestination;
+function init(){
+  audioInputSelect.onchange = start;
+  audioOutputSelect.onchange = changeAudioDestination;  
+  videoSelect.onchange = start;
+  start();
+}
 
-videoSelect.onchange = start;
 
 // start();
 
-export { start };
+export { init };

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+
+<!-- https://dribbble.com/shots/14537560-Video-Annotation-App/attachments/6225340?mode=media -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nintendo Switch Capture</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            /* color: var(--default-color); */
+            overflow: auto;
+        }
+
+        body {
+            padding-top: 3.25rem;
+        }
+
+        .container.is-custom {
+            max-width: none !important;
+            padding-top: 3rem;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 1rem;
+            width: 100%;
+        }
+
+        /* h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        label {
+            color: var(--default-color) !important;
+        } */
+
+        .subtitle.is-custom {
+            font-size: 0.9rem;
+            color: hsl(0, 0%, 60%);
+        }
+
+        .round-button {
+            border-radius: 9999px;
+            border-width: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 3em;
+            width: 3em;
+        }
+
+        .rect-button {
+            color: var(--default-color) !important;
+            background-color: transparent;
+            /* cursor: pointer; */
+            border-width: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 3em;
+            width: 4em;
+            border-radius: 10px;
+        }
+
+        .share-button {
+            color: var(--default-color) !important;
+        }
+
+        /* .mode-button {} */
+
+        .icon-button {
+            /* margin-right: 0.5rem; */
+            /* margin-bottom: 0.5rem; */
+            margin-top: 1rem;
+        }
+
+        .share-button:hover,
+        .rect-button:hover {
+            background-color: #846f36 !important;
+        }
+
+        .share-button:focus,
+        .rect-button:focus {
+            background-color: #efc245 !important;
+            color: #000000 !important;
+        }
+
+        .left-bar {
+            width: 60px;
+            display: flex;
+            flex-direction: column;
+            margin-left: 0.75rem;
+            margin-right: 3rem;
+        }
+
+        .middle-bar {
+            height: 100%;
+            width: 370px;
+            overflow-x: hidden;
+            overflow-wrap: break-word;
+            overflow-y: auto;
+            /* color: var(--default-color); */
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: auto;
+            height: 100%;
+            min-height: 360px;
+        }
+
+        .player-controls {
+            position: absolute;
+            bottom: 0;
+            height: 50px;
+            width: 100%;
+            opacity: 1;
+            transition: opacity 0.3s;
+        }
+
+        /* .video-wrapper video:hover+.player-controls,
+        .player-controls:hover {
+            opacity: 1;
+            transition: opacity 0.3s;
+        } */
+
+        .player-controls .button {
+            /* color: var(--default-color) !important;
+            background-color: transparent; */
+            border-width: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 3em;
+            width: 3em;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body class="has-background-light">
+    <nav class="navbar position-fixed-top w-100 border-bottom" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item">
+                <div class="content">
+                    <h3 class="mb-1">Nintendo Switch Capture</h3>
+                    <!-- <p class="subtitle is-custom">Display the game screen of Nintendo Switch on the web page.</p> -->
+                </div>
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">
+                    Documentation
+                </a>
+
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <button class="button ">
+                        <span class="material-symbols-outlined">
+                            share
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section w-100 h-100">
+        <div class="columns m-0 h-100">
+            <div class="column is-9 border-right">
+                <div class="container is-fluid py-5 is-flex is-flex-direction-column">
+
+                    <div class="video-wrapper is-flex-grow-1">
+                        <video width="720" height="360"></video>
+                        <div class="player-controls has-background-dark is-flex is-justify-content-center">
+                            <!-- control: 設定 -->
+                            <button class="button is-dark is-small modal-button" data-target="modal"
+                                aria-haspopup="true">
+                                <span class="material-symbols-outlined">
+                                    settings
+                                </span>
+                            </button>
+                            <!-- control: 播放、暫停 -->
+                            <button class="button is-dark is-small d-none" id="play">
+                                <span class="material-symbols-outlined">
+                                    play_arrow
+                                </span>
+                            </button>
+                            <button class="button is-dark is-small" id="pause">
+                                <span class="material-symbols-outlined">
+                                    pause
+                                </span>
+                            </button>
+                            <!-- control: 開啟聲音、靜音 -->
+                            <button class="button is-dark is-small" id="volume_on">
+                                <span class="material-symbols-outlined">
+                                    volume_up
+                                </span>
+                            </button>
+                            <button class="button is-dark is-small d-none" id="volume_off">
+                                <span class="material-symbols-outlined">
+                                    volume_off
+                                </span>
+                            </button>
+                            <button class="button is-dark is-small d-none">
+                                <span class="material-symbols-outlined">
+                                    volume_down
+                                </span>
+                            </button>
+                            <!-- control: 子母畫面 -->
+                            <button class="button is-dark is-small" id="pip">
+                                <span class="material-symbols-outlined">
+                                    picture_in_picture_alt
+                                </span>
+                            </button>
+                            <!-- control: 全螢幕化 -->
+                            <button class="button is-dark is-small" id="fullscreen">
+                                <span class="material-symbols-outlined">
+                                    fullscreen
+                                </span>
+                            </button>
+                            <button class="button is-dark is-small d-none" id="fullscreen_exit">
+                                <span class="material-symbols-outlined">
+                                    fullscreen_exit
+                                </span>
+                            </button>
+
+                            <!-- <button class="button is-dark is-small">
+                                <span class="material-symbols-outlined">
+                                    video_library
+                                </span>
+                            </button>
+                            <button class="button is-dark is-small" id="screenshot">
+                                <span class="material-symbols-outlined">
+                                    imagesmode
+                                </span>
+                            </button>
+                            <button class="button is-dark is-small">
+                                <span class="material-symbols-outlined">
+                                    text_snippet
+                                </span>
+                            </button> -->
+                        </div>
+                    </div>
+
+                    <div class="video-wrapper">
+                        <video id="recorded" width="240" height="320"></video>
+                    </div>
+
+                    <!-- <p>請先開啟 <b>Nintendo Switch</b> 電源，並接上<b>擷取卡</b>，然後將擷取卡連接到電腦。</p>
+                    <p><b>影像來源</b> & <b>聲音來源</b> 都請選擇擷取卡裝置。<br> <b>聲音輸出</b> 則選擇要輸出聲音的裝置(如: 揚聲器、耳機)。</p> -->
+                    <div class="content">
+                        <p>
+                            Please power on your <b>Nintendo Switch</b>. Then connect to the <b>capture card</b> and
+                            your
+                            computer.
+                        </p>
+                        <p>
+                            Select the <b>capture card device</b> for both <b>video source</b> & <b>audio source.</b>
+                            For
+                            <b>audio output</b>, select the device you want to output audio from (e.g., speakers,
+                            headphones).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3 middle-bar has-background-white">
+                <div class="tabs">
+                    <ul>
+                        <li class="is-active" data-target="tab-panel-setting"><a>Setting</a></li>
+                        <li data-target="tab-panel-recording"><a>錄影</a></li>
+                        <li data-target="tab-panel-screenshot"><a>截圖</a></li>
+                    </ul>
+                </div>
+
+                <div class="tab-panel card-content is-active" id="tab-panel-setting">
+                    <!-- <h4 class="title is-4">Stream setting</h4> -->
+                    <h5 class="title is-5">Input source</h5>
+                    <div class="field">
+                        <label class="label">Video source / 影像輸入</label>
+                        <div class="control has-icons-left">
+                            <div class="select is-fullwidth">
+                                <select id="videoSource"></select>
+                            </div>
+                            <div class="icon is-small is-left">
+                                <span class="material-symbols-outlined">
+                                    videocam
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Audio source / 音訊輸入</label>
+                        <div class="control has-icons-left">
+                            <div class="select is-fullwidth">
+                                <select id="audioSource"></select>
+                            </div>
+                            <div class="icon is-small is-left">
+                                <span class="material-symbols-outlined">
+                                    mic
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="title is-5 mt-6">Output device</h5>
+                    <div class="field">
+                        <label class="label">Audio output / 音訊輸出</label>
+                        <div class="control has-icons-left">
+                            <div class="select is-fullwidth">
+                                <select id="audioOutput"></select>
+                            </div>
+                            <div class="icon is-small is-left">
+                                <span class="material-symbols-outlined">
+                                    speaker
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-panel card-content" id="tab-panel-recording">
+                    <div class="field">
+                        <label class="label">Function</label>
+                        <div class="control">
+                            <button id="start" class="button is-fullwidth">Start camera</button>
+                            <button id="record" disabled class="button is-fullwidth">Start Recording</button>
+                            <button id="play-record" disabled class="button is-fullwidth">Play</button>
+                            <button id="download" disabled class="button is-fullwidth">Download</button>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Recording format</label>
+                        <div class="control">
+                            <div class="select">
+                                <select id="codecPreferences" disabled></select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox" id="echoCancellation">
+                                Echo cancellation
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <span id="errorMsg"></span>
+                    </div>
+                </div>
+
+                <div class="tab-panel card-content" id="tab-panel-screenshot">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script type="module" src="../js/bulma.js" async></script>
+    <script type="module" src="../js/webrtc.js" async></script>
+    <script src="../js/player.js" async></script>
+</body>
+
+</html>
