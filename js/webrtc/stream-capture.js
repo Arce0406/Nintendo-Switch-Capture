@@ -1,4 +1,4 @@
-import * as StreamRecorder from "./recorder.js";
+// import * as StreamRecorder from "./recorder.js";
 
 const videoElement = document.querySelector("video");
 const audioInputSelect = document.querySelector("select#audioSource");
