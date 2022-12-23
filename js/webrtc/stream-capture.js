@@ -103,7 +103,7 @@ function changeAudioDestination() {
  * @returns
  */
 function gotStream(stream) {
-  StreamRecorder.handleSuccess(stream);
+  // StreamRecorder.handleSuccess(stream);
   window.stream = stream; // make stream available to console
   videoElement.srcObject = stream;
   videoElement.play();
