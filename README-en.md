@@ -1,3 +1,5 @@
+> **Moved**: redesigned as “Switch Screen Capture” at https://vsingerintro.com/tools/switch-capture . This repository is no longer maintained and will be archived.
+
 # Nintendo Switch Capture  
 
 Display the game screen of Nintendo Switch on the web page.  
