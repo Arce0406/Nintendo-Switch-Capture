@@ -1,3 +1,5 @@
+> **移転しました**：「Switch 画面キャプチャー」として https://vsingerintro.com/tools/switch-capture に移転しました。このリポジトリは今後メンテナンスされず、アーカイブされます。
+
 # Nintendo Switch Capture  
 
 Display the game screen of Nintendo Switch on the web page.  
